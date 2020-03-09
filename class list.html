@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class list</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- load jquery and bootstrap js -->
+    <script src="assets/js/jquery.min.js" ></script>
+    <script src="assets/js/popper.min.js" ></script>
+    <script src="assets/js/bootstrap.js" ></script>
+    <script type="text/javascript">
+      chagebackground = (color) => {
+        // mengambil element html
+        let element = document.getElementById('pesan');
+        //mengkosongkan class pada elemen yang diambil
+        element.className="";
+        //memberikan class "alert" pada elemen yang diambil
+        element.classList.add("alert");
+        //memberikan class tipe alert berdasarkan parameter
+        element.classList.add("alert-"+color);
+      }
+      </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card col-sm-12">
+            <div class="card-header bg-success text-white">
+              <h4>alert setting</h4>
+            </div>
+            <div class="card-body">
+              <div id="pesan" class="alert alert-light">
+                <strong>urgent!</strong>
+                this is a alert message, you can chage type of alert below
+              </div>
+            </div>
+            <div class="card-footer">
+              <!-- bagkground setting -->
+              <select class="form-control" onchange="chagebackground(this.value)">
+                  <option value="light">default</option>
+                  <option value="primary">primary</option>
+                  <option value="danger">danger</option>
+                  <option value="warning">warning</option>
+                  <option value="success">success</option>
+                  <option value="dark">dark</option>
+                  <option value="secondary">secondary</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
